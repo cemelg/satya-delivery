@@ -1,0 +1,46 @@
+DROP TABLE IF EXISTS ACCOUNT;
+
+CREATE TABLE ACCOUNT(
+	account_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	balance DOUBLE PRECISION,
+	currency VARCHAR(25)
+);
+
+INSERT INTO ACCOUNT(account_Id, balance, currency) VALUES
+('111','100','USD'),
+('222','70.5','USD'),
+('333','90','USD');
+
+
+DROP TABLE IF EXISTS Transcation;
+
+CREATE TABLE Transcation(
+	transcation_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	account_Id BIGINT,
+	othrs_Account_Id BIGINT,
+	amount DOUBLE PRECISION,
+	Transtype VARCHAR(10),
+	currency VARCHAR(10),
+	transcation_Date TIMESTAMP
+);
+
+INSERT INTO Transcation(transcation_Id, account_Id, othrs_Account_Id, amount, Transtype, currency,transcation_Date) VALUES
+('1','111','222','10','CREDIT','USD','2025-01-01 11:00:00+03'),
+('2','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('3','111','222','10','CREDIT','USD','2021-01-01 11:00:00+03'),
+('4','111','222','10','CREDIT','USD','2025-01-01 11:00:00+03'),
+('5','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('6','111','222','10','CREDIT','USD','2021-01-01 11:00:00+03'),
+('7','111','222','10','CREDIT','USD','2025-01-01 11:00:00+03'),
+('8','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('9','111','222','10','CREDIT','USD','2021-01-01 11:00:00+03'),
+('10','111','222','10','CREDIT','USD','2025-01-01 11:00:00+03'),
+('11','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('12','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('13','111','222','10','CREDIT','USD','2021-01-01 11:00:00+03'),
+('14','333','222','10','CREDIT','USD','2021-01-01 11:00:00+03'),
+('15','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('16','111','222','10','CREDIT','USD','2021-01-01 11:00:00+03'),
+('17','111','222','10','CREDIT','USD','2025-01-01 11:00:00+03'),
+('18','111','333','10.00','DEBIT','USD','2024-01-01 11:00:00+03'),
+('19','111','222','10','CREDIT','USD','2021-01-01 11:00:00+03');
